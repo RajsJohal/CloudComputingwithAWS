@@ -61,18 +61,22 @@ Amazon Web Service is the world's most comprehensive and broadly adopted cloud p
 - T2.Micro
 - Default Storage
 - Tags eng99_raj_db
-- SG allow 27017 only from your app IP
+- SG allow 27017 only from your app IP (TCP)
 - Place App EC2 instnce IP in the SG of DB EC2 
 - Allow SSH port 22 from your IP only
 - eng99_raj_db_sg
 - SSH into your DB EC2 instance 
-- Install required MongoDB
+- Install required MongoDB for 18.04 Ubuntu
 - Status Active
 - Change MongoDB.conf file BindIP to 0.0.0.0
-- Restart, enable, status
+- `sudo systemctl` restart, enable, status
 - head back to app instance 
 - Create env var DB_HOST="mongodb://db-ip:port/posts"
+- `sudo nano ~/.bashrc` 
+- inside bashrc, `export DB_HOST=="mongodb://db-ip:port/posts"` 
 - Source it 
-- cd app
-- node seeds/seed.js
-- npm start
+- `cd app`
+- `node seeds/seed.js`
+- `npm install`
+- `npm start`
+- Enter App EC2 ip:3000/posts into web browser to see database
