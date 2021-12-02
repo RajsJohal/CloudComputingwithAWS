@@ -41,7 +41,19 @@ Amazon Web Service is the world's most comprehensive and broadly adopted cloud p
 - Once an instance of EC2 has been launched, open a Git Bash terminal and set up an ssh directory with the .pem encryption key 
 - Connect to the instance from the terminal by running an ssh command and running the ubuntu version setup with the instance.
 - Git clone the app repository to the EC2 and run the provision script, then npm to run the app on the IP associated with the EC2 instance.
--App is located on the public subnet of the VPC
+- App is located on the public subnet of the VPC
+- Create an EC2 instance - VM
+- Ubuntu 18.04 LTS
+- Select size of VM
+- Security Group rules
+- SSH into EC2 via Git Bash using AWS Key
+- Check VM with update and upgrade -y
+- Install nginx to be accessed on public IP
+- enable public IP for the EC2 instance 
+- Load App code into the EC2 via Git clone
+- Install dependencies 
+- CD into App folder
+- npm install and npm start to load app into web browser
 
 **EC2 for Database**
 - Located within the private subnet within the VPC and only the app can access the database (NEVER HAS A PUBLIC IP)
