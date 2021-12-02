@@ -34,3 +34,33 @@ Amazon Web Service is the world's most comprehensive and broadly adopted cloud p
 - Fastest Pace of Innovation
 - Most Proven Operational Expertise
 - Global Network of AWS Regions with Availability Zones
+
+## Creating an EC2 Instance
+- Login to AWS Management Console with Sparta Global credentials
+- Navigate to EC2 and launch an instance
+- Once an instance of EC2 has been launched, open a Git Bash terminal and set up an ssh directory with the .pem encryption key 
+- Connect to the instance from the terminal by running an ssh command and running the ubuntu version setup with the instance.
+- Git clone the app repository to the EC2 and run the provision script, then npm to run the app on the IP associated with the EC2 instance.
+-App is located on the public subnet of the VPC
+
+**EC2 for Database**
+- Located within the private subnet within the VPC and only the app can access the database (NEVER HAS A PUBLIC IP)
+- EC2 Linux Ubuntu 18.04 LTS
+- T2.Micro
+- Default Storage
+- Tags eng99_raj_db
+- SG allow 27017 only from your app IP
+- Place App EC2 instnce IP in the SG of DB EC2 
+- Allow SSH port 22 from your IP only
+- eng99_raj_db_sg
+- SSH into your DB EC2 instance 
+- Install required MongoDB
+- Status Active
+- Change MongoDB.conf file BindIP to 0.0.0.0
+- Restart, enable, status
+- head back to app instance 
+- Create env var DB_HOST="mongodb://db-ip:port/posts"
+- Source it 
+- cd app
+- node seeds/seed.js
+- npm start
