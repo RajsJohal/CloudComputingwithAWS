@@ -80,3 +80,49 @@ Amazon Web Service is the world's most comprehensive and broadly adopted cloud p
 - `npm install`
 - `npm start`
 - Enter App EC2 ip:3000/posts into web browser to see database
+
+## AMI (Amaozon Machine Image)
+- Select EC2 instance and then create an image of the instance in the actions tab
+- Once the image has been created, stop the original instance and launch the image
+- Some details will be required
+- t2-micro 
+- Storage
+- Tags 
+- Security Groups 
+- Once the details above have been added the image will be formed into an instance which contains all the data from the original instance
+- The IP of the image will be different from the original instance
+- So make sure to change the IP where necessary, such as the security groups and in the bashrc file in the app VM.
+
+## Security Groups
+Acts as a virtual firewall for your EC2 instance to control inbound and outbound traffic. 
+When you launch an instance in the VPC you can assign upto 5 security groups to one instance. Security groups act at the instance level, not the subnet level. Therefore each instance in a subnet in your VPC can be assigned to a different set of security groups.  
+
+## CloudWatch
+Amazon CloudWatch monitors your AWS resources and the applications you run on AWS real time. CloudWatch can be used to collect and track metrics, which are variables you can measure for your resources and applications. 
+
+**Alarms**
+CloudWatch alarms can be set to watch metrics and send notifications when the mterics reach a certin threshold set by the account holder, the alarms can also make changes to the resources being monitored. 
+For example, you can monitor CPU usage ad disk reads and writes of your Amazon EC2 instances and then use this data to determine whether you should launch additional instances to handle increased load. You can also use this data to stop under-used instances to save money. 
+
+**SNS**
+A managed service that provides message delivery from publishers to subscribers (aka producers and consumers). Publishers communicate asynchronously with subscribers by sending messages to a topic, which is a logical access point and communication channel. Clients can subscribe to the SNS topic and recieve published messges using a supported endpoint type such as Amazon Kinesis Data Firehose, Amazon SQS, AWS Lambda, HTTP, email, mobile push notifications and mobile text messages (SMS).
+
+## Explain how to make your app Highly Available and Scalable
+Scalable
+- Modularity over monolithic
+An applications software is contstructed of multiple and loosely coupled building blocks (functions). These functions collectively integrate through pre-defined common interfaces or APIs to form the desired application functionaility (microservices architecture). 
+- Horizontal Scaling/Scale-out 
+The capability to automatically add systems/instances in a distributed manner in order to handle an increase in load. The load is distributed across multiple instances. By distributing these instances across Availability zones, horizontal scaling only increases performance but also improves overall reliability. 
+For this method to work seamlessly, the application needs to be designed to support a stateless scaling model, where the applications state information is stored and requested independently from the applications instances. 
+- Leverage the content delivery network 
+- Go serverless where possible
+- Secure by design
+- Design for failure
+The reliability of a service or solution in the cloud depends on multiple factors, the primary of which is resiliency. This design principle becomes even more critical at scale because the failure impact magnitude typically will be higher. Therefore, to achieve a reliable scalability, it is essential to design a resilient solution, capable of recovering from infrastructure or service disruptions. This principle involves designing the overall solution in such a way that even if one or more of its components fail, the solution is still be capable of providing an acceptable level of its expected function(s).
+**What services are used to achieve this**
+- High Availaability
+Elastic Load Balancing
+Availability Zones 
+- Scalable
+Amazon CloudFront and edge locations
+
