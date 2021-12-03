@@ -146,3 +146,9 @@ AWS Lightsail
 - Create a Auto Scaling Group using the launch template and an existing AMI or create a new AMI using ubuntu 18.04 Linus LTS 
 - New instances will be generated from the auto scaling group 
 
+## AWS CLI
+- ssh into EC2 instance 
+- Install dependencies from command line, python 3, aws cli
+- `aws configure` accesses aws, you need to enter access key, secret key, region (eu-west-1) and output language (json)
+
+## S3 Buckets
