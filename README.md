@@ -130,8 +130,18 @@ Amazon EC2
 AWS Lambda
 AWS Lightsail
 
+## Launch Template
+- Begin with the name
+- Version description
+- Select contents which could be a new AMI such as Ubuntu 18.04 or an AMI you created before such as eng99_raj_app_ami
+- Instance type which would be t2.micro 
+- Key pair to login would be eng99
+- Network settings will be launching into a VPC, select the Security Groups for this launch instance which will the security group made for the app EC2
+- Inside the advanced details will be user data which will be commands starting with `#!/bin/bash` to automate the functions following this command.
+- The template can then be created
+
 ## Auto Scaling Group and Load Balancing
-![ASG] (/asg.PNG)
+![AUTO SCALING GROUP](/asg.PNG)
 - Create a Launch Template 
 - Create a Auto Scaling Group using the launch template and an existing AMI or create a new AMI using ubuntu 18.04 Linus LTS 
 - New instances will be generated from the auto scaling group 
