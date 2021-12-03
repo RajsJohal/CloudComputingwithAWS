@@ -165,3 +165,19 @@ AWS Lightsail
 
 
 ![AWS CLI](/awscli.PNG)
+
+## S3 with Boto3
+- Python boto3
+- python3 -m pip install boto3
+- import boto3
+- s3 = boto3.client('s3')
+# Create bucket
+- s3.create_bucket( Bucket=<bucket_name>, CreateBucketConfiguration={'LocationConstraint':'<availability_zone>'} )
+# Upload file to bucket
+- s3.upload_file(<file_location>, <my_bucket>, )
+# Download file from bucket
+- s3.download_file(, <location_on_bucket>, '<disired_location>')
+# Delete file from bucket
+- s3.delete_object(<bucket_name>, <file_pathon_bucket>)
+# Delete Bucket
+- s3.delete_bucket(<bucket_name>)
