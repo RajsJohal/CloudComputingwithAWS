@@ -68,7 +68,7 @@ Amazon Web Service is the world's most comprehensive and broadly adopted cloud p
 - SSH into your DB EC2 instance 
 - Install required MongoDB for 18.04 Ubuntu
 - Status Active
-- Change MongoDB.conf file BindIP to 0.0.0.0
+- Change MongoDB.conf file BindIP to 0.0.0.0 `cd /etc` then `sudo nano mongod.conf`
 - `sudo systemctl` restart, enable, status
 - head back to app instance 
 - Create env var DB_HOST="mongodb://db-ip:port/posts"
@@ -125,4 +125,13 @@ Elastic Load Balancing
 Availability Zones 
 - Scalable
 Amazon CloudFront and edge locations
+Amazon CloudWatch
+Amazon EC2
+AWS Lambda
+AWS Lightsail
+
+## Auto Scaling Group and Load Balancing
+- Create a Launch Template 
+- Create a Auto Scaling Group using the launch template and an existing AMI or create a new AMI using ubuntu 18.04 Linus LTS 
+- New instances will be generated from the auto scaling group 
 
