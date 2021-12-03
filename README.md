@@ -148,7 +148,20 @@ AWS Lightsail
 
 ## AWS CLI
 - ssh into EC2 instance 
-- Install dependencies from command line, python 3, aws cli
+- Install dependencies from command line, python 3 `python3 -m pip install awscli`, aws cli
+- The command used to download python also installs boto3 which is the AWS SDK that makes ue of services such as Amazon S3 and EC2. 
 - `aws configure` accesses aws, you need to enter access key, secret key, region (eu-west-1) and output language (json)
 
+
 ## S3 Buckets
+- `sudo apt install awscli -y`
+- ` python3 -m pip install awscli`
+- `aws configure`, enter access key, secret key, region and language output
+- Once this has been done enter `aws s3 ls` to see the list of s3 buckets on the Sparta Global S3
+- `aws s3 mb s3://eng99-name` to create your own bucket (underscores do not work in aws cli)
+- `aws s3 cp FILENAME s3://eng99-name` to place files or folders into S3 bucket
+- if you wish to recover a file from s3 `aws s3 cp s3://mybucket/FILENAME FILENAME` to recover said file
+- To delete a S3 bucket from AWS CLI `aws s3 rb s3://mybucket --force`, `--force` is used if the bucket is not empty 
+
+
+![AWS CLI](/awscli.PNG)
