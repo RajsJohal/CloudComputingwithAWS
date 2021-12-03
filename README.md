@@ -131,6 +131,7 @@ AWS Lambda
 AWS Lightsail
 
 ## Auto Scaling Group and Load Balancing
+![ASG] (/asg.PNG)
 - Create a Launch Template 
 - Create a Auto Scaling Group using the launch template and an existing AMI or create a new AMI using ubuntu 18.04 Linus LTS 
 - New instances will be generated from the auto scaling group 
